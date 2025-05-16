@@ -20,7 +20,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable}`}>
+    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
