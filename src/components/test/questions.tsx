@@ -40,7 +40,7 @@ export default function TestQuestions({
       : "Finish";
 
   return (
-    <Card className="w-full max-w-3xl">
+    <Card className="w-full max-w-3xl shadow-none">
       <CardHeader>
         <CardTitle className="text-2xl">Comprehension Questions</CardTitle>
         <CardDescription>

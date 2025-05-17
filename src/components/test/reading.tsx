@@ -27,7 +27,7 @@ export default function TestReading({
   const buttonText = isLoading ? "Mempersiapkan pertanyaan..." : "Selesai";
 
   return (
-    <Card className="w-full max-w-3xl">
+    <Card className="w-full max-w-3xl shadow-none">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">{passage.title}</CardTitle>
         <CardDescription>{passage.level}</CardDescription>

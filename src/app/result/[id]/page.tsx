@@ -43,7 +43,7 @@ export default async function ResultIdPage({ params }: ResultIdPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <main className="flex-1">
-        <div className="mx-auto flex min-h-svh max-w-7xl items-center justify-center py-12">
+        <div className="mx-auto flex min-h-svh max-w-7xl items-center justify-center py-12 px-4">
           <ResultIndex id={id} />
         </div>
       </main>
