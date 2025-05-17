@@ -132,7 +132,11 @@ export default function TestInstructions({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button onClick={handleStartReading} className="w-full" disabled={isLoading}>
+              <Button
+                onClick={handleStartReading}
+                className="w-full"
+                disabled={isLoading}
+              >
                 {buttonText}
               </Button>
             </TooltipTrigger>

@@ -6,9 +6,18 @@ import { Outfit } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
-  title: "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
-  description: "Aksarify adalah platform latihan pemahaman bacaan Bahasa Indonesia dengan tes kilat dan pembahasan instan untuk meningkatkan literasi membaca dalam hitungan menit.",
-  keywords: ["pemahaman bacaan", "literasi bahasa indonesia", "tes membaca", "latihan membaca", "kecepatan membaca", "aplikasi literasi"],
+  title:
+    "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
+  description:
+    "Aksarify adalah platform latihan pemahaman bacaan Bahasa Indonesia dengan tes kilat dan pembahasan instan untuk meningkatkan literasi membaca dalam hitungan menit.",
+  keywords: [
+    "pemahaman bacaan",
+    "literasi bahasa indonesia",
+    "tes membaca",
+    "latihan membaca",
+    "kecepatan membaca",
+    "aplikasi literasi",
+  ],
   authors: [{ name: "Aksarify" }],
   creator: "Aksarify",
   publisher: "Aksarify",
@@ -22,8 +31,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
-    description: "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
+    title:
+      "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
+    description:
+      "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
     url: "https://aksarify.xyz",
     siteName: "Aksarify",
     images: [
@@ -39,8 +50,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
-    description: "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
+    title:
+      "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
+    description:
+      "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
     images: ["https://aksarify.xyz/website-preview.png"],
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
@@ -63,18 +76,20 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "url": "https://aksarify.xyz/",
-              "name": "Aksarify",
-              "description": "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif",
-              "potentialAction": {
+              url: "https://aksarify.xyz/",
+              name: "Aksarify",
+              description:
+                "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif",
+              potentialAction: {
                 "@type": "SearchAction",
-                "target": {
+                target: {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://aksarify.xyz/search?q={search_term_string}"
+                  urlTemplate:
+                    "https://aksarify.xyz/search?q={search_term_string}",
                 },
-                "query-input": "required name=search_term_string"
-              }
-            })
+                "query-input": "required name=search_term_string",
+              },
+            }),
           }}
         />
         <script
@@ -83,11 +98,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "url": "https://aksarify.xyz",
-              "logo": "https://aksarify.xyz/logo.png",
-              "name": "Aksarify",
-              "description": "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif dan menyenangkan"
-            })
+              url: "https://aksarify.xyz",
+              logo: "https://aksarify.xyz/logo.png",
+              name: "Aksarify",
+              description:
+                "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif dan menyenangkan",
+            }),
           }}
         />
       </head>

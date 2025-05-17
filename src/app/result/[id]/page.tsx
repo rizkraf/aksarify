@@ -13,25 +13,26 @@ export default async function ResultIdPage({ params }: ResultIdPageProps) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Hasil Tes Pemahaman Bacaan | Aksarify",
-    "description": "Hasil tes pemahaman bacaan dengan metrik tentang kecepatan membaca dan tingkat pemahaman.",
-    "breadcrumb": {
+    name: "Hasil Tes Pemahaman Bacaan | Aksarify",
+    description:
+      "Hasil tes pemahaman bacaan dengan metrik tentang kecepatan membaca dan tingkat pemahaman.",
+    breadcrumb: {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Beranda",
-          "item": "https://aksarify.xyz"
+          position: 1,
+          name: "Beranda",
+          item: "https://aksarify.xyz",
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "Hasil Tes",
-          "item": `https://aksarify.xyz/result/${id}`
-        }
-      ]
-    }
+          position: 2,
+          name: "Hasil Tes",
+          item: `https://aksarify.xyz/result/${id}`,
+        },
+      ],
+    },
   };
 
   return (

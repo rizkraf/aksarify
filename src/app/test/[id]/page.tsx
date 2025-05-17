@@ -13,11 +13,12 @@ interface TestIdPageProps {
 
 export const metadata: Metadata = {
   title: "Tes Pemahaman Bacaan | Aksarify",
-  description: "Uji kemampuan membaca dan pemahaman Bahasa Indonesia Anda dengan tes interaktif. Dapatkan hasil instan dan rekomendasi untuk peningkatan.",
+  description:
+    "Uji kemampuan membaca dan pemahaman Bahasa Indonesia Anda dengan tes interaktif. Dapatkan hasil instan dan rekomendasi untuk peningkatan.",
   robots: {
     index: false,
     follow: true,
-  }
+  },
 };
 
 export default async function TestIdPage({ params }: TestIdPageProps) {
@@ -26,25 +27,25 @@ export default async function TestIdPage({ params }: TestIdPageProps) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Tes Pemahaman Bacaan | Aksarify",
-    "description": "Halaman tes pemahaman bacaan interaktif Bahasa Indonesia",
-    "breadcrumb": {
+    name: "Tes Pemahaman Bacaan | Aksarify",
+    description: "Halaman tes pemahaman bacaan interaktif Bahasa Indonesia",
+    breadcrumb: {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Beranda",
-          "item": "https://aksarify.xyz"
+          position: 1,
+          name: "Beranda",
+          item: "https://aksarify.xyz",
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "Tes Pemahaman Bacaan",
-          "item": `https://aksarify.xyz/test/${id}`
-        }
-      ]
-    }
+          position: 2,
+          name: "Tes Pemahaman Bacaan",
+          item: `https://aksarify.xyz/test/${id}`,
+        },
+      ],
+    },
   };
 
   return (
@@ -57,7 +58,11 @@ export default async function TestIdPage({ params }: TestIdPageProps) {
       <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50 w-full backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
           <Button variant="ghost" asChild>
-            <Link href="/" className="flex items-center gap-2" aria-label="Kembali ke beranda Aksarify">
+            <Link
+              href="/"
+              className="flex items-center gap-2"
+              aria-label="Kembali ke beranda Aksarify"
+            >
               <IconArrowLeft size={16} />
               <span className="text-sm font-medium">Kembali ke beranda</span>
             </Link>

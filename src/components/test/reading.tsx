@@ -40,7 +40,11 @@ export default function TestReading({
         </div>
       </CardContent>
       <CardFooter>
-        <Button onClick={handleFinishReading} className="w-full" disabled={isLoading}>
+        <Button
+          onClick={handleFinishReading}
+          className="w-full"
+          disabled={isLoading}
+        >
           {buttonText}
         </Button>
       </CardFooter>
