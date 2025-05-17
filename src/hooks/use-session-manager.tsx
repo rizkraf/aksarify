@@ -18,10 +18,13 @@ export function useSessionManager() {
   const [isLoading, setIsLoading] = useState(true);
 
   // Move the session query to the component level
-  const existingId = typeof window !== "undefined" ? window.localStorage.getItem(SESSION_STORAGE_KEY) : null;
+  const existingId =
+    typeof window !== "undefined"
+      ? window.localStorage.getItem(SESSION_STORAGE_KEY)
+      : null;
   const { data: sessionData } = api.session.getSessionById.useQuery(
     { id: existingId ?? "" },
-    { enabled: !!existingId }
+    { enabled: !!existingId },
   );
 
   // Check if a session is expired

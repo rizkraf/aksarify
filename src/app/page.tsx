@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { IconPhoto } from "@tabler/icons-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -40,10 +40,15 @@ export default function Home() {
               </Button>
             </div>
             <div className="mx-auto mt-16 w-full max-w-7xl">
-              <div className="bg-muted relative aspect-video w-full overflow-hidden rounded-lg">
-                <div className="text-muted-foreground absolute inset-0 flex items-center justify-center">
-                  <IconPhoto size={64} />
-                </div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/website-preview.png"
+                  alt="Aksarify platform preview"
+                  fill
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+"
+                />
               </div>
             </div>
           </section>

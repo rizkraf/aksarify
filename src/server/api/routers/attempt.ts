@@ -22,7 +22,9 @@ export const attemptRouter = createTRPCRouter({
       });
       const readingTime = endTime - startTime;
       const wordPerMinute = passage?.body
-        ? Math.round((passage.body.trim().split(/\s+/).length / readingTime) * 60)
+        ? Math.round(
+            (passage.body.trim().split(/\s+/).length / readingTime) * 60,
+          )
         : 0;
       const answerIdx = answers.map((answer) => parseInt(answer));
 
