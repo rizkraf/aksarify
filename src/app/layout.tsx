@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Aksarify",
     images: [
       {
-        url: "/website-preview.png",
+        url: "https://aksarify.xyz/website-preview.png",
         width: 1200,
         height: 630,
         alt: "Aksarify - Platform Uji Pemahaman Bacaan",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
     description: "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
-    images: ["/website-preview.png"],
+    images: ["https://aksarify.xyz/website-preview.png"],
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
