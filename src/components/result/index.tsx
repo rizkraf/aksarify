@@ -3,7 +3,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -23,12 +22,9 @@ export default function ResultIndex({ id }: ResultIndexProps) {
   });
 
   return (
-    <Card className="w-full max-w-3xl">
+    <Card className="w-full max-w-3xl shadow-none">
       <CardHeader>
         <CardTitle className="text-2xl">Hasil Tes</CardTitle>
-        <CardDescription>
-          {/* Here's how you performed on the {difficulty} level test */}
-        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-6 sm:grid-cols-2">
