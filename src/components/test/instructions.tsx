@@ -19,13 +19,17 @@ interface TestInstructionsProps {
   difficulty: string;
   setDifficulty: (difficulty: string) => void;
   handleStartReading: () => void;
+  isLoading: boolean;
 }
 
 export default function TestInstructions({
   difficulty,
   setDifficulty,
   handleStartReading,
+  isLoading,
 }: TestInstructionsProps) {
+  const buttonText = isLoading ? "Mempersiapkan teks..." : "Mulai Membaca";
+
   return (
     <Card className="w-full max-w-3xl shadow-none">
       <CardHeader className="text-center">
@@ -128,8 +132,8 @@ export default function TestInstructions({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button onClick={handleStartReading} className="w-full">
-                Mulai Membaca
+              <Button onClick={handleStartReading} className="w-full" disabled={isLoading}>
+                {buttonText}
               </Button>
             </TooltipTrigger>
             <TooltipContent>

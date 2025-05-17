@@ -29,12 +29,19 @@ export default function TestIndex({ id }: TestIndexProps) {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<string[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const questionsLength = useMemo(() => {
     return questions.length;
   }, [questions]);
 
   const getPassage = api.passage.getPassageByDifficulty.useMutation({
+    onMutate: () => {
+      setIsLoading(true);
+    },
+    onSettled: () => {
+      setIsLoading(false);
+    },
     onSuccess: async (data) => {
       await utils.passage.invalidate();
       setPassage({
@@ -49,6 +56,12 @@ export default function TestIndex({ id }: TestIndexProps) {
   });
 
   const getQuestions = api.question.getQuestionByPassage.useMutation({
+    onMutate: () => {
+      setIsLoading(true);
+    },
+    onSettled: () => {
+      setIsLoading(false);
+    },
     onSuccess: async (data) => {
       await utils.question.invalidate();
       setEndTime(Math.floor(Date.now() / 1000));
@@ -59,6 +72,12 @@ export default function TestIndex({ id }: TestIndexProps) {
   });
 
   const createAttempt = api.attempt.creatAttempyByPassage.useMutation({
+    onMutate: () => {
+      setIsLoading(true);
+    },
+    onSettled: () => {
+      setIsLoading(false);
+    },
     onSuccess: async (data) => {
       await utils.attempt.invalidate();
       router.push(`/result/${data.id}`);
@@ -106,6 +125,7 @@ export default function TestIndex({ id }: TestIndexProps) {
             difficulty={difficulty}
             setDifficulty={setDifficulty}
             handleStartReading={handleStartReading}
+            isLoading={isLoading}
           />
         );
 
@@ -114,6 +134,7 @@ export default function TestIndex({ id }: TestIndexProps) {
           <TestReading
             passage={passage}
             handleFinishReading={handleFinishReading}
+            isLoading={isLoading}
           />
         );
 
@@ -127,6 +148,7 @@ export default function TestIndex({ id }: TestIndexProps) {
             handlePrevQuestion={handlePrevQuestion}
             questions={questions}
             totalQuestions={questionsLength}
+            isLoading={isLoading}
           />
         );
 

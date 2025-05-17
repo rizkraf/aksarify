@@ -20,6 +20,7 @@ interface TestQuestionsProps {
   handleAnswerSelect: (value: string) => void;
   handleNextQuestion: () => void;
   handlePrevQuestion: () => void;
+  isLoading: boolean;
 }
 
 export default function TestQuestions({
@@ -30,7 +31,14 @@ export default function TestQuestions({
   handleAnswerSelect,
   handleNextQuestion,
   handlePrevQuestion,
+  isLoading,
 }: TestQuestionsProps) {
+  const buttonText = isLoading
+    ? "Memproses hasil..."
+    : currentQuestion < totalQuestions - 1
+      ? "Next"
+      : "Finish";
+
   return (
     <Card className="w-full max-w-3xl">
       <CardHeader>
@@ -98,9 +106,9 @@ export default function TestQuestions({
         </Button>
         <Button
           onClick={handleNextQuestion}
-          disabled={!answers[currentQuestion]}
+          disabled={!answers[currentQuestion] || isLoading}
         >
-          {currentQuestion < totalQuestions - 1 ? "Next" : "Finish"}
+          {buttonText}
         </Button>
       </CardFooter>
     </Card>

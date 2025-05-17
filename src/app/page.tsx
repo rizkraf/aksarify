@@ -7,18 +7,30 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import HomeStructuredData from "@/components/structured-data/home-structured-data";
+
+export const metadata: Metadata = {
+  title: "Aksarify - Uji Pemahaman Bacamu Dalam Hitungan Menit",
+  description: "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif dan menyenangkan. Tingkatkan literasi membacamu dalam hitungan menit dengan Aksarify.",
+};
 
 export default function Home() {
+
   return (
+    <>
+      <HomeStructuredData />
     <div className="bg-background relative flex min-h-svh flex-col">
       <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50 w-full backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
           <div className="flex items-center space-x-2">
-            <h1 className="text-2xl font-bold">Aksarify</h1>
+            <Link href="/" aria-label="Aksarify Beranda">
+              <h1 className="text-2xl font-bold">Aksarify</h1>
+            </Link>
           </div>
-          <nav className="flex items-center space-x-4">
+          <nav className="flex items-center space-x-4" aria-label="Navigasi utama">
             <Button asChild>
-              <Link href="/test">Mulai Tes</Link>
+              <Link href="/test" aria-label="Mulai tes pemahaman bacaan">Mulai Tes</Link>
             </Button>
           </nav>
         </div>
@@ -27,13 +39,13 @@ export default function Home() {
         <div className="mx-auto flex min-h-screen max-w-7xl flex-col p-4">
           <section id="hero" className="relative pt-24 md:pt-32">
             <div className="flex flex-col items-center justify-center text-center">
-              <h1 className="max-w-4xl scroll-m-20 text-5xl font-medium tracking-tight lg:text-7xl">
+              <h2 className="max-w-4xl scroll-m-20 text-5xl font-medium tracking-tight lg:text-7xl">
                 Uji Pemahaman Bacamu{" "}
                 <span className="text-primary">Dalam Hitungan menit!</span>
-              </h1>
+              </h2>
               <p className="text-muted-foreground mt-6 max-w-2xl text-xl text-balance">
-                Aksarify adalah platform yang dirancang untuk membantu kamu
-                mengukur dan meningkatkan pemahaman bacaan.
+                Aksarify adalah platform interaktif yang dirancang khusus untuk membantu kamu
+                mengukur dan meningkatkan kemampuan pemahaman bacaan Bahasa Indonesia.
               </p>
               <Button asChild size="lg" className="mt-12 font-semibold">
                 <Link href="/test">Mulai Tes Gratis</Link>
@@ -43,11 +55,13 @@ export default function Home() {
               <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
                   src="/website-preview.png"
-                  alt="Aksarify platform preview"
+                  alt="Tampilan platform Aksarify untuk tes pemahaman bacaan Bahasa Indonesia"
                   fill
                   className="object-cover"
                   placeholder="blur"
                   blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 1200px"
                 />
               </div>
             </div>
@@ -246,5 +260,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }

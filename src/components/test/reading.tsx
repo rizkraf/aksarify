@@ -16,12 +16,16 @@ interface TestReadingProps {
     level: string;
   };
   handleFinishReading: () => void;
+  isLoading: boolean;
 }
 
 export default function TestReading({
   passage,
   handleFinishReading,
+  isLoading,
 }: TestReadingProps) {
+  const buttonText = isLoading ? "Mempersiapkan pertanyaan..." : "Selesai";
+
   return (
     <Card className="w-full max-w-3xl">
       <CardHeader className="text-center">
@@ -36,8 +40,8 @@ export default function TestReading({
         </div>
       </CardContent>
       <CardFooter>
-        <Button onClick={handleFinishReading} className="w-full">
-          Selesai
+        <Button onClick={handleFinishReading} className="w-full" disabled={isLoading}>
+          {buttonText}
         </Button>
       </CardFooter>
     </Card>
