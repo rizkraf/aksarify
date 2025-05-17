@@ -6,6 +6,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { IconPhoto } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
             <h1 className="text-2xl font-bold">Aksarify</h1>
           </div>
           <nav className="flex items-center space-x-4">
-            <Button>Mulai Tes</Button>
+            <Button asChild>
+              <Link href="/test">Mulai Tes</Link>
+            </Button>
           </nav>
         </div>
       </header>
@@ -32,8 +35,8 @@ export default function Home() {
                 Aksarify adalah platform yang dirancang untuk membantu kamu
                 mengukur dan meningkatkan pemahaman bacaan.
               </p>
-              <Button size="lg" className="mt-12 font-semibold">
-                Mulai Tes Gratis
+              <Button asChild size="lg" className="mt-12 font-semibold">
+                <Link href="/test">Mulai Tes Gratis</Link>
               </Button>
             </div>
             <div className="mx-auto mt-16 w-full max-w-7xl">
@@ -221,7 +224,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                 <Button size="lg" className="font-semibold">
-                  Mulai Tes Gratis
+                  <Link href="/test">Mulai Tes Gratis</Link>
                 </Button>
               </div>
             </div>

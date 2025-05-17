@@ -6,16 +6,67 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_URL")
+    provider  = "postgresql"
+    url       = env("DATABASE_URL")
     directUrl = env("DIRECT_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+enum Level {
+    mudah
+    menengah
+    sulit
+}
 
-    @@index([name])
+enum Skill {
+    ide_pokok
+    detail
+    inferensi
+}
+
+model Passage {
+    id        String     @id @default(uuid()) @db.Uuid
+    title     String     @db.VarChar(255)
+    body      String     @db.Text
+    level     Level
+    createdAt DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+    questions Question[]
+    attempts  Attempt[]
+
+    @@map("passage")
+}
+
+model Question {
+    id        String @id @default(uuid()) @db.Uuid
+    prompt    String @db.Text
+    options   Json
+    answerIdx Int  @map("answer_idx") @db.Integer
+    skill     Skill
+
+    passageId String  @map("passage_id") @db.Uuid
+    passage   Passage @relation(fields: [passageId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+    @@map("question")
+}
+
+model Session {
+    id        String    @id @default(uuid()) @db.Uuid
+    createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+    attempts  Attempt[]
+
+    @@map("session")
+}
+
+model Attempt {
+    id        String   @id @default(uuid()) @db.Uuid
+    answerIdx Int[]    @map("answer_idx") @db.Integer
+    readingTime Int     @map("reading_time") @db.Integer
+    wordPerMinute Int @map("word_per_minute") @db.Integer
+    createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+    sessionId String  @map("session_id") @db.Uuid
+    session   Session @relation(fields: [sessionId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    passageId String  @map("passage_id") @db.Uuid
+    passage   Passage @relation(fields: [passageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+    @@map("attempt")
 }
