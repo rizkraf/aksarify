@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { api } from "@/trpc/react";
 
 // Local storage key for storing the session ID
 export const SESSION_STORAGE_KEY = "aksarify-session-id";
@@ -15,6 +16,13 @@ export function useSessionManager() {
   const router = useRouter();
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Move the session query to the component level
+  const existingId = typeof window !== "undefined" ? window.localStorage.getItem(SESSION_STORAGE_KEY) : null;
+  const { data: sessionData } = api.session.getSessionById.useQuery(
+    { id: existingId ?? "" },
+    { enabled: !!existingId }
+  );
 
   // Check if a session is expired
   const isSessionExpired = (): boolean => {
@@ -73,8 +81,8 @@ export function useSessionManager() {
 
     const existingSessionId = window.localStorage.getItem(SESSION_STORAGE_KEY);
 
-    if (existingSessionId) {
-      router.push(`/test/${existingSessionId}`);
+    if (existingSessionId && sessionData?.id) {
+      router.push(`/test/${sessionData.id}`);
       return true;
     }
 

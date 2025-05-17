@@ -22,8 +22,6 @@ export default function ResultIndex({ id }: ResultIndexProps) {
     id,
   });
 
-  console.log("data", data);
-
   return (
     <Card className="w-full max-w-3xl">
       <CardHeader>

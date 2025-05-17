@@ -1,4 +1,3 @@
-import { postRouter } from "@/server/api/routers/post";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
 import { sessionRouter } from "@/server/api/routers/session";
 import { passageRouter } from "./routers/passage";
@@ -11,7 +10,6 @@ import { attemptRouter } from "./routers/attempt";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  post: postRouter,
   session: sessionRouter,
   passage: passageRouter,
   question: questionRouter,
