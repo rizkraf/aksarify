@@ -125,7 +125,7 @@ export default function ResultIndex({ id }: ResultIndexProps) {
         </div>
       </CardContent>
       <CardFooter className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Button variant="outline" asChild>
+        <Button variant="outline" asChild className="shadow-none">
           <Link href={`/test/${data?.sessionId}`}>Ulangi Tes</Link>
         </Button>
         <Button asChild>

@@ -92,6 +92,7 @@ export default function TestQuestions({
           variant="outline"
           onClick={handlePrevQuestion}
           disabled={currentQuestion === 0}
+          className="shadow-none"
         >
           Previous
         </Button>
