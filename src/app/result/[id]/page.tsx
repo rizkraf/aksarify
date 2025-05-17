@@ -22,13 +22,13 @@ export default async function ResultIdPage({ params }: ResultIdPageProps) {
           "@type": "ListItem",
           "position": 1,
           "name": "Beranda",
-          "item": "https://aksarify.com"
+          "item": "https://aksarify.xyz"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Hasil Tes",
-          "item": `https://aksarify.com/result/${id}`
+          "item": `https://aksarify.xyz/result/${id}`
         }
       ]
     }

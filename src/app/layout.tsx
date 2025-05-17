@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://aksarify.com"),
+  metadataBase: new URL("https://aksarify.xyz"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
     description: "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
-    url: "https://aksarify.com",
+    url: "https://aksarify.xyz",
     siteName: "Aksarify",
     images: [
       {
@@ -63,14 +63,14 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "url": "https://aksarify.com/",
+              "url": "https://aksarify.xyz/",
               "name": "Aksarify",
               "description": "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://aksarify.com/search?q={search_term_string}"
+                  "urlTemplate": "https://aksarify.xyz/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }
@@ -83,8 +83,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "url": "https://aksarify.com",
-              "logo": "https://aksarify.com/logo.png",
+              "url": "https://aksarify.xyz",
+              "logo": "https://aksarify.xyz/logo.png",
               "name": "Aksarify",
               "description": "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif dan menyenangkan"
             })

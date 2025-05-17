@@ -1,3 +1,3 @@
 # This file tells search engines like Google what our canonical domain is
 User-agent: *
-Host: https://aksarify.com
+Host: https://aksarify.xyz

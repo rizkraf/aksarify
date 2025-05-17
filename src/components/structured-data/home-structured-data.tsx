@@ -4,15 +4,15 @@ export default function HomeStructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "url": "https://aksarify.com",
+    "url": "https://aksarify.xyz",
     "name": "Aksarify",
     "description": "Platform uji dan tingkatkan kemampuan pemahaman bacaan Bahasa Indonesia",
     "sameAs": ["https://facebook.com/aksarify", "https://twitter.com/aksarify", "https://instagram.com/aksarify"],
-    "logo": "https://aksarify.com/logo.png",
+    "logo": "https://aksarify.xyz/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "email": "support@aksarify.com"
+      "email": "support@aksarify.xyz"
     }
   };
 

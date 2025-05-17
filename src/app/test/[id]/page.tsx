@@ -35,13 +35,13 @@ export default async function TestIdPage({ params }: TestIdPageProps) {
           "@type": "ListItem",
           "position": 1,
           "name": "Beranda",
-          "item": "https://aksarify.com"
+          "item": "https://aksarify.xyz"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Tes Pemahaman Bacaan",
-          "item": `https://aksarify.com/test/${id}`
+          "item": `https://aksarify.xyz/test/${id}`
         }
       ]
     }
