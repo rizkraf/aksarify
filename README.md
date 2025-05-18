@@ -1,29 +1,107 @@
-# Create T3 App
+# Aksarify - Platform Uji Pemahaman Bacaan
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+<p align="center">
+  <img src="./public/website-preview.png" alt="Aksarify Logo" width="600"/>
+</p>
 
-## What's next? How do I make an app with this?
+<p align="center">
+  <strong>Uji dan tingkatkan pemahaman bacaan Bahasa Indonesia dalam hitungan menit!</strong>
+</p>
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## 📖 Tentang Aksarify
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Aksarify adalah platform interaktif yang dirancang untuk membantu pengguna mengukur dan meningkatkan kemampuan pemahaman bacaan Bahasa Indonesia. Dengan metode tes yang efektif dan menyenangkan, Aksarify menawarkan pengalaman belajar yang menarik untuk semua tingkat pembaca.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## 🚀 Fitur Utama
 
-## Learn More
+- **Tes Kilat** - Satu teks (~200 kata) dan 5 soal pilihan ganda, selesai dalam hitungan menit
+- **Beragam Tingkat Kesulitan** - Tersedia tes dengan berbagai level kesulitan
+- **Analisis Instan** - Dapatkan hasil dan pembahasan segera setelah menyelesaikan tes
+- **Metrik Performa** - Lacak kecepatan membaca, kata per menit, dan tingkat pemahaman
+- **Antarmuka Modern** - Pengalaman pengguna yang intuitif dan responsif
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## 🧪 Demo
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+Kunjungi [https://aksarify.xyz](https://aksarify.xyz) untuk mencoba Aksarify.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## 🛠️ Teknologi
 
-## How do I deploy this?
+Aksarify dibangun dengan stack teknologi modern:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- **Framework**: [Next.js 15](https://nextjs.org/) dengan App Router
+- **Database**: [Supabase PostgreSQL](https://www.supabase.com/) dengan [Prisma ORM](https://prisma.io/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) dengan [Shadcn UI](https://ui.shadcn.com/)
+- **Backend**: [tRPC](https://trpc.io/) untuk API type-safe
+- **Deployment**: Dioptimalkan untuk [Vercel](https://vercel.com/)
+
+## 💻 Instalasi dan Pengembangan Lokal
+
+### Prasyarat
+
+- Node.js (versi 18 atau lebih tinggi)
+- PostgreSQL
+- pnpm, npm, yarn, atau bun
+
+### Langkah Instalasi
+
+1. Clone repositori
+   ```bash
+   git clone https://github.com/rizkraf/aksarify.git
+   cd aksarify
+   ```
+
+2. Install dependencies
+   ```bash
+   pnpm install
+   # atau
+   npm install
+   ```
+
+3. Salin file environment dan sesuaikan
+   ```bash
+   cp .env.example .env
+   # Edit file .env dengan editor pilihan Anda
+   ```
+
+4. Siapkan database
+   ```bash
+   pnpm prisma migrate dev
+   # atau
+   npx prisma migrate dev
+   ```
+
+5. Jalankan seed untuk sampel data (opsional)
+   ```bash
+   pnpm prisma db seed
+   # atau
+   npx prisma db seed
+   ```
+
+6. Jalankan aplikasi dalam mode development
+   ```bash
+   pnpm dev
+   # atau
+   npm run dev
+   ```
+
+7. Buka [http://localhost:3000](http://localhost:3000) di browser Anda
+
+## 📚 Struktur Aplikasi
+
+```
+src/
+├── app/                   # Next.js App Router
+│   ├── api/               # API routes
+│   ├── result/            # Halaman hasil tes
+│   ├── test/              # Halaman ujian
+├── components/            # React components
+│   ├── result/            # Komponen hasil
+│   ├── structured-data/   # JSON-LD Structured data
+│   ├── test/              # Komponen ujian
+│   └── ui/                # Komponen UI umum
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utilitas & helper
+├── server/                # Backend logic & tRPC
+│   └── api/               # tRPC API routes
+└── styles/                # Global styles
+```
