@@ -30,7 +30,7 @@ export default function TestReading({
     <Card className="w-full max-w-3xl shadow-none">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">{passage.title}</CardTitle>
-        <CardDescription>{passage.level}</CardDescription>
+        <CardDescription>{passage.level.toUpperCase()}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="rounded-lg border p-4">

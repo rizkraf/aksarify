@@ -85,6 +85,7 @@ export function useSessionManager() {
     const existingSessionId = window.localStorage.getItem(SESSION_STORAGE_KEY);
 
     if (existingSessionId && sessionData?.id) {
+      setIsLoading(true);
       router.push(`/test/${sessionData.id}`);
       return true;
     }
