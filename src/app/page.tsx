@@ -42,11 +42,11 @@ export default function Home() {
           <div className="mx-auto flex min-h-screen max-w-7xl flex-col p-4">
             <section id="hero" className="relative pt-24 md:pt-32">
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="max-w-4xl scroll-m-20 text-5xl font-medium tracking-tight lg:text-7xl">
+                <h2 className="max-w-4xl scroll-m-20 text-4xl font-medium tracking-tight md:text-5xl lg:text-7xl">
                   Uji Pemahaman Bacamu{" "}
                   <span className="text-primary">Dalam Hitungan menit!</span>
                 </h2>
-                <p className="text-muted-foreground mt-6 max-w-2xl text-xl text-balance">
+                <p className="text-muted-foreground mt-6 max-w-2xl text-lg text-balance md:text-xl">
                   Aksarify adalah platform interaktif yang dirancang khusus
                   untuk membantu kamu mengukur dan meningkatkan kemampuan
                   pemahaman bacaan Bahasa Indonesia.
@@ -73,15 +73,15 @@ export default function Home() {
             <section id="problem-solution" className="relative pt-24 md:pt-32">
               <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 <div className="flex flex-col gap-6">
-                  <h2 className="text-3xl font-bold tracking-tight">
+                  <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
                     Tantangan Pemahaman Bacaan di Era Digital
                   </h2>
-                  <p className="text-muted-foreground text-lg text-balance">
+                  <p className="text-muted-foreground text-base text-balance md:text-lg">
                     Indonesia masih tertinggal dalam hal pemahaman bacaan. Tiga
                     angka di bawah ini memperlihatkan betapa seriusnya masalah
                     ini:
                   </p>
-                  <ul className="text-muted-foreground space-y-5">
+                  <ul className="text-muted-foreground space-y-5 text-sm">
                     <li className="flex gap-2">
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/20 text-amber-600">
                         !
@@ -112,14 +112,14 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="flex flex-col gap-6">
-                  <h2 className="text-3xl font-bold tracking-tight">
+                  <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
                     Tingkatkan Kemampuan Baca dengan Aksarify
                   </h2>
-                  <p className="text-muted-foreground text-lg text-balance">
+                  <p className="text-muted-foreground text-base text-balance md:text-lg">
                     Aksarify membuat latihan super ringan yang bisa dipakai
                     siapa saja, kapan saja untuk meningkatkan kemampuan membaca:
                   </p>
-                  <ul className="text-muted-foreground space-y-5">
+                  <ul className="text-muted-foreground space-y-5 text-sm md:text-base">
                     <li className="flex gap-2">
                       <div className="bg-primary/20 text-primary flex h-6 w-6 items-center justify-center rounded-full">
                         ✓
@@ -156,7 +156,7 @@ export default function Home() {
               className="bg-secondary/5 relative pt-24 md:pt-32"
             >
               <div className="flex flex-col items-center text-center">
-                <h2 className="mb-12 max-w-2xl text-4xl font-bold tracking-tight">
+                <h2 className="mb-12 max-w-2xl text-2xl font-bold tracking-tight md:text-3xl">
                   Tiga Langkah Mudah untuk Meningkatkan Kemampuan Membaca
                 </h2>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -164,7 +164,9 @@ export default function Home() {
                     <div className="bg-primary text-primary-foreground mb-6 flex h-12 w-12 items-center justify-center rounded-full text-2xl font-bold">
                       1
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">Baca Teks</h3>
+                    <h3 className="mb-2 text-lg font-bold md:text-xl">
+                      Baca Teks
+                    </h3>
                     <p className="text-muted-foreground">
                       Baca teks yang disajikan dengan seksama. Teks akan
                       bervariasi setiap kali kamu mengerjakan tes.
@@ -174,7 +176,9 @@ export default function Home() {
                     <div className="bg-primary text-primary-foreground mb-6 flex h-12 w-12 items-center justify-center rounded-full text-2xl font-bold">
                       2
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">Jawab 5 Soal</h3>
+                    <h3 className="mb-2 text-lg font-bold md:text-xl">
+                      Jawab 5 Soal
+                    </h3>
                     <p className="text-muted-foreground">
                       Jawab 5 soal pilihan ganda yang menguji pemahamanmu
                       terhadap teks yang telah dibaca.
@@ -184,7 +188,7 @@ export default function Home() {
                     <div className="bg-primary text-primary-foreground mb-6 flex h-12 w-12 items-center justify-center rounded-full text-2xl font-bold">
                       3
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">
+                    <h3 className="mb-2 text-lg font-bold md:text-xl">
                       Lihat Hasil dan Pembahasan
                     </h3>
                     <p className="text-muted-foreground">
@@ -197,14 +201,16 @@ export default function Home() {
             </section>
             <section id="key-features" className="relative pt-24 md:pt-32">
               <div className="flex flex-col items-center text-center">
-                <h2 className="mb-12 max-w-2xl text-4xl font-bold tracking-tight">
+                <h2 className="mb-12 max-w-2xl text-2xl font-bold tracking-tight md:text-4xl">
                   Fitur Unggulan yang bikin kamu betah berlatih
                 </h2>
               </div>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <Card className="shadow-none">
                   <CardHeader>
-                    <div className="text-primary mb-4 text-3xl">⏱️</div>
+                    <div className="text-primary mb-4 text-2xl md:text-3xl">
+                      ⏱️
+                    </div>
                     <CardTitle>Tes Kilat Hanya Hitungan Menit</CardTitle>
                     <CardDescription>
                       Satu teks & lima soal, cukup untuk mengukur pemahamanmu
@@ -214,7 +220,9 @@ export default function Home() {
                 </Card>
                 <Card className="shadow-none">
                   <CardHeader>
-                    <div className="text-primary mb-4 text-3xl">✅</div>
+                    <div className="text-primary mb-4 text-2xl md:text-3xl">
+                      ✅
+                    </div>
                     <CardTitle>Skor Instan</CardTitle>
                     <CardDescription>
                       Klik Kirim dan langsung lihat jawaban benar-salah plus
@@ -224,7 +232,9 @@ export default function Home() {
                 </Card>
                 <Card className="shadow-none">
                   <CardHeader>
-                    <div className="text-primary mb-4 text-3xl">📚</div>
+                    <div className="text-primary mb-4 text-2xl md:text-3xl">
+                      📚
+                    </div>
                     <CardTitle>Bacaan Yang Variatif</CardTitle>
                     <CardDescription>
                       Koleksi bacaan dengan tingkat kesulitan dan topik yang
@@ -239,10 +249,10 @@ export default function Home() {
               className="bg-primary/5 relative my-24 rounded-2xl p-12 text-center md:my-32"
             >
               <div className="mx-auto max-w-3xl">
-                <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+                <h2 className="mb-4 text-2xl font-bold tracking-tight md:text-4xl">
                   Siap Tingkatkan Pemahaman Bacamu?
                 </h2>
-                <p className="text-muted-foreground mb-8 text-lg">
+                <p className="text-muted-foreground mb-8 text-base md:text-lg">
                   Mulai beberapa menit untuk tes pertamamu.
                 </p>
                 <div className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
