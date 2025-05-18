@@ -81,7 +81,7 @@ export default function Home() {
                     angka di bawah ini memperlihatkan betapa seriusnya masalah
                     ini:
                   </p>
-                  <ul className="text-muted-foreground space-y-5 text-sm">
+                  <ul className="text-muted-foreground space-y-5 text-sm md:text-base">
                     <li className="flex gap-2">
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/20 text-amber-600">
                         !
