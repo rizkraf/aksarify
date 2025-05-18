@@ -42,9 +42,9 @@ export default function TestQuestions({
   return (
     <Card className="w-full max-w-3xl shadow-none">
       <CardHeader>
-        <CardTitle className="text-2xl">Comprehension Questions</CardTitle>
+        <CardTitle className="text-2xl">Pertanyaan Pemahaman</CardTitle>
         <CardDescription>
-          Answer the following questions based on the passage
+          Pilih jawaban yang paling tepat untuk setiap pertanyaan di bawah ini.
         </CardDescription>
       </CardHeader>
       <CardContent>
