@@ -37,12 +37,12 @@ export default function ResultIndex({ id }: ResultIndexProps) {
             ) : (
               <p className="mt-2 text-3xl font-bold text-teal-600">
                 {data?.readingTime
-                  ? `${Math.floor(data.readingTime / 360)
+                  ? `${Math.floor(data.readingTime / 60)
                       .toString()
                       .padStart(
                         2,
                         "0",
-                      )}:${(data.readingTime % 360).toString().padStart(2, "0")}`
+                      )}:${(data.readingTime % 60).toString().padStart(2, "0")}`
                   : "00:00"}
               </p>
             )}
