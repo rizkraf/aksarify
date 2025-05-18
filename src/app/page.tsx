@@ -8,7 +8,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import HomeStructuredData from "@/components/structured-data/home-structured-data";
 
 export const metadata: Metadata = {
   title: "Aksarify - Uji Pemahaman Bacamu Dalam Hitungan Menit",
@@ -19,7 +18,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HomeStructuredData />
       <div className="bg-background relative flex min-h-svh flex-col">
         <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50 w-full backdrop-blur">
           <div className="mx-auto flex max-w-7xl items-center justify-between p-4">

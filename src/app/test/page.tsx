@@ -1,5 +1,3 @@
-import TestStructuredData from "@/components/structured-data/test-structured-data";
-
 import type { Metadata } from "next";
 import TestStart from "@/components/test/start";
 
@@ -27,7 +25,6 @@ export const metadata: Metadata = {
 export default function TestPage() {
   return (
     <>
-      <TestStructuredData />
       <div className="bg-background relative flex min-h-svh flex-col">
         <main className="flex-1">
           <div className="mx-auto flex min-h-svh items-center justify-center py-12 px-4">
