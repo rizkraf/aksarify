@@ -77,11 +77,23 @@ export const attemptRouter = createTRPCRouter({
       const comprehensionScore = Math.round(
         (correctAnswers / (attempt?.passage.questions.length ?? 1)) * 100,
       );
+      const answerDifference = attempt?.answerIdx.map((answer, index) => {
+        const question = attempt?.passage.questions[index];
+        if (question) {
+          return {
+            questionId: question.id,
+            correctAnswer: question.answerIdx,
+            userAnswer: answer,
+            isCorrect: question.answerIdx === answer,
+          };
+        }
+      });
 
       return {
         ...attempt,
         correctAnswers,
         comprehensionScore,
+        answerDifference,
       };
     }),
 });

@@ -70,7 +70,7 @@ export default async function TestIdPage({ params }: TestIdPageProps) {
         </div>
       </header>
       <main className="flex-1">
-        <div className="mx-auto flex min-h-svh max-w-7xl items-center justify-center py-24 px-4">
+        <div className="mx-auto flex min-h-svh max-w-7xl items-center justify-center px-4 py-24">
           <TestIndex id={id} />
         </div>
       </main>

@@ -84,43 +84,43 @@ export default function ResultIndex({ id }: ResultIndexProps) {
             )}
           </div>
         </div>
-        <div className="mt-6 rounded-lg border p-4">
-          <h3 className="mb-2 font-medium">Analisis Performa</h3>
+        <div className="mt-6">
+          <h3 className="mb-4 font-medium">Analisis Jawaban</h3>
           {isFetching ? (
-            <Skeleton className="mx-auto h-4 w-full" />
-          ) : (data?.comprehensionScore ?? 0) >= 80 ? (
-            <p className="text-muted-foreground text-sm">
-              Kerja bagus! kamu memiliki pemahaman yang sangat baik tentang teks
-              bahasa Indonesia tingkat.
-            </p>
-          ) : (data?.comprehensionScore ?? 0) >= 60 ? (
-            <p className="text-muted-foreground text-sm">
-              Kamu memiliki pemahaman yang baik tentang teks bahasa Indonesia
-              tingkat.
-            </p>
+            <Skeleton className="mx-auto h-24 w-full" />
           ) : (
-            <p className="text-muted-foreground text-sm">
-              Kamu perlu meningkatkan pemahamanmu tentang teks bahasa Indonesia
-              tingkat.
-            </p>
-          )}
-          <h3 className="mt-4 mb-2 font-medium">Kecepatan Membaca</h3>
-          {isFetching ? (
-            <Skeleton className="mx-auto h-4 w-full" />
-          ) : (data?.readingTime ?? 0) < 30 ? (
-            <p className="text-muted-foreground text-sm">
-              Kecepatan membacamu sangat cepat. Pastikan kamu memahami apa yang
-              kamu baca.
-            </p>
-          ) : (data?.readingTime ?? 0) < 60 ? (
-            <p className="text-muted-foreground text-sm">
-              Kecepatan membacamu baik, menyeimbangkan antara kecepatan dan
-              pemahaman.
-            </p>
-          ) : (
-            <p className="text-muted-foreground text-sm">
-              Membacamu teliti dan menyeluruh, yang bagus untuk pemahaman.
-            </p>
+            <div className="space-y-3">
+              {data?.answerDifference?.map((answer, index) => (
+                <div key={answer?.questionId} className="rounded-md border p-3">
+                  <div className="flex items-center justify-between">
+                    <div className="font-medium">Pertanyaan {index + 1}</div>
+                    <div
+                      className={`rounded-md px-2 py-1 text-xs font-medium ${answer?.isCorrect ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                    >
+                      {answer?.isCorrect ? "Benar" : "Salah"}
+                    </div>
+                  </div>
+                  <div className="mt-2 grid gap-2 text-sm">
+                    <div className="flex items-start">
+                      <span className="mr-2 font-medium">Jawaban Benar:</span>
+                      <span>
+                        {String.fromCharCode(65 + (answer?.correctAnswer ?? 0))}
+                      </span>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="mr-2 font-medium">Jawaban Kamu:</span>
+                      <span
+                        className={
+                          answer?.isCorrect ? "text-green-600" : "text-red-600"
+                        }
+                      >
+                        {String.fromCharCode(65 + (answer?.userAnswer ?? 0))}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </CardContent>
