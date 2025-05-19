@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useRef, useState } from "react";
 import TestInstructions from "./instructions";
 import { api } from "@/trpc/react";
 import TestReading from "./reading";
@@ -18,8 +18,8 @@ export default function TestIndex({ id }: TestIndexProps) {
 
   const [difficulty, setDifficulty] = useState("mudah");
   const [stage, setStage] = useState("instructions"); // instructions, reading, questions
-  const [startTime, setStartTime] = useState(0);
-  const [endTime, setEndTime] = useState(0);
+  const startTime = useRef(0);
+  const endTime = useRef(0);
   const [passage, setPassage] = useState({
     id: "",
     title: "",
@@ -31,9 +31,7 @@ export default function TestIndex({ id }: TestIndexProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  const questionsLength = useMemo(() => {
-    return questions.length;
-  }, [questions]);
+  const questionsLength = questions.length;
 
   const getPassage = api.passage.getPassageByDifficulty.useMutation({
     onMutate: () => {
@@ -51,7 +49,7 @@ export default function TestIndex({ id }: TestIndexProps) {
         level: data?.level ?? "",
       });
       setStage("reading");
-      setStartTime(Math.floor(Date.now() / 1000));
+      startTime.current = Math.floor(Date.now() / 1000);
     },
   });
 
@@ -64,7 +62,7 @@ export default function TestIndex({ id }: TestIndexProps) {
     },
     onSuccess: async (data) => {
       await utils.question.invalidate();
-      setEndTime(Math.floor(Date.now() / 1000));
+      endTime.current = Math.floor(Date.now() / 1000);
       setQuestions(data ?? []);
       setStage("questions");
       setCurrentQuestion(0);
@@ -104,8 +102,8 @@ export default function TestIndex({ id }: TestIndexProps) {
     } else {
       createAttempt.mutate({
         answers,
-        startTime,
-        endTime,
+        startTime: startTime.current,
+        endTime: endTime.current,
         passageId: passage.id,
         sessionId: id,
       });
