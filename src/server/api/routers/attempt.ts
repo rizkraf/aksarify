@@ -60,6 +60,7 @@ export const attemptRouter = createTRPCRouter({
                 select: {
                   id: true,
                   answerIdx: true,
+                  skill: true
                 },
               },
             },
@@ -85,6 +86,7 @@ export const attemptRouter = createTRPCRouter({
             correctAnswer: question.answerIdx,
             userAnswer: answer,
             isCorrect: question.answerIdx === answer,
+            skill: question.skill,
           };
         }
       });

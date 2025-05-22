@@ -16,6 +16,19 @@ interface ResultIndexProps {
   id: string;
 }
 
+const renderSkillName = (skill: string): string => {
+  switch (skill) {
+    case "ide_pokok":
+      return "Menemukan Ide Pokok";
+    case "detail":
+      return "Memahami Detail";
+    case "inferensi":
+      return "Membuat Inferensi";
+    default:
+      return skill;
+  }
+};
+
 export default function ResultIndex({ id }: ResultIndexProps) {
   const { data, isFetching } = api.attempt.getAttemptById.useQuery({
     id,
@@ -117,6 +130,14 @@ export default function ResultIndex({ id }: ResultIndexProps) {
                         {String.fromCharCode(65 + (answer?.userAnswer ?? 0))}
                       </span>
                     </div>
+                    {answer?.skill && (
+                      <div className="flex items-start">
+                        <span className="mr-2 font-medium">Keterampilan:</span>
+                        <span className="text-blue-600">
+                          {renderSkillName(answer.skill)}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
