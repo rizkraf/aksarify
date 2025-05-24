@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Outfit } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title:
@@ -105,6 +106,11 @@ export default function RootLayout({
                 "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif dan menyenangkan",
             }),
           }}
+        />
+        <Script
+          async
+          src="https://umami-beige-rho.vercel.app/script.js"
+          data-website-id="77743441-0264-4104-a461-fa351bb98169"
         />
       </head>
       <body>
