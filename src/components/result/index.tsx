@@ -117,7 +117,15 @@ export default function ResultIndex({ id }: ResultIndexProps) {
                     <div className="flex items-start">
                       <span className="mr-2 font-medium">Jawaban Benar:</span>
                       <span>
-                        {String.fromCharCode(65 + (answer?.correctAnswer ?? 0))}
+                        {`${String.fromCharCode(65 + (answer?.correctAnswer ?? 0))}. ${
+                          Array.isArray(answer?.options)
+                            ? (
+                                answer?.options[
+                                  answer?.correctAnswer ?? 0
+                                ] as string
+                              )?.slice(0, 97) + "..."
+                            : "No answer"
+                        }`}
                       </span>
                     </div>
                     <div className="flex items-start">
@@ -127,7 +135,15 @@ export default function ResultIndex({ id }: ResultIndexProps) {
                           answer?.isCorrect ? "text-green-600" : "text-red-600"
                         }
                       >
-                        {String.fromCharCode(65 + (answer?.userAnswer ?? 0))}
+                        {`${String.fromCharCode(65 + (answer?.userAnswer ?? 0))}. ${
+                          Array.isArray(answer?.options)
+                            ? (
+                                answer?.options[
+                                  answer?.userAnswer ?? 0
+                                ] as string
+                              )?.slice(0, 97) + "..."
+                            : "No answer"
+                        }`}
                       </span>
                     </div>
                     {answer?.skill && (
