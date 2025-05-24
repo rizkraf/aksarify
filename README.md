@@ -96,7 +96,6 @@ src/
 │   ├── test/              # Halaman ujian
 ├── components/            # React components
 │   ├── result/            # Komponen hasil
-│   ├── structured-data/   # JSON-LD Structured data
 │   ├── test/              # Komponen ujian
 │   └── ui/                # Komponen UI umum
 ├── hooks/                 # Custom React hooks
