@@ -109,7 +109,7 @@ export default function RootLayout({
         />
         <Script
           async
-          src="https://umami-beige-rho.vercel.app/script.js"
+          src="https://umami.aksarify.xyz/script.js"
           data-website-id="77743441-0264-4104-a461-fa351bb98169"
         />
       </head>
