@@ -147,11 +147,9 @@ export default function ResultIndex({ id }: ResultIndexProps) {
                       <span>
                         {`${String.fromCharCode(65 + (answer?.correctAnswer ?? 0))}. ${
                           Array.isArray(answer?.options)
-                            ? (
-                                answer?.options[
-                                  answer?.correctAnswer ?? 0
-                                ] as string
-                              )?.slice(0, 97) + "..."
+                            ? (answer?.options[
+                                answer?.correctAnswer ?? 0
+                              ] as string)
                             : "No answer"
                         }`}
                       </span>
@@ -165,11 +163,9 @@ export default function ResultIndex({ id }: ResultIndexProps) {
                       >
                         {`${String.fromCharCode(65 + (answer?.userAnswer ?? 0))}. ${
                           Array.isArray(answer?.options)
-                            ? (
-                                answer?.options[
-                                  answer?.userAnswer ?? 0
-                                ] as string
-                              )?.slice(0, 97) + "..."
+                            ? (answer?.options[
+                                answer?.userAnswer ?? 0
+                              ] as string)
                             : "No answer"
                         }`}
                       </span>
