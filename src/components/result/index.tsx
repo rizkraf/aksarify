@@ -11,6 +11,12 @@ import { api } from "@/trpc/react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { Skeleton } from "../ui/skeleton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 interface ResultIndexProps {
   id: string;
@@ -33,6 +39,8 @@ export default function ResultIndex({ id }: ResultIndexProps) {
   const { data, isFetching } = api.attempt.getAttemptById.useQuery({
     id,
   });
+
+  console.log(data);
 
   return (
     <Card className="w-full max-w-3xl shadow-none">
@@ -96,6 +104,26 @@ export default function ResultIndex({ id }: ResultIndexProps) {
               </p>
             )}
           </div>
+        </div>
+        <div className="mt-6">
+          {isFetching ? (
+            <Skeleton className="mx-auto h-32 w-full" />
+          ) : (
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="passage-text">
+                <AccordionTrigger>
+                  Lihat Teks yang Telah Dibaca
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="rounded-lg border bg-gray-50/50 p-4">
+                    <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">
+                      {data?.passage?.body ?? "Teks tidak tersedia"}
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          )}
         </div>
         <div className="mt-6">
           <h3 className="mb-4 font-medium">Analisis Jawaban</h3>
