@@ -22,7 +22,7 @@ Aksarify adalah platform interaktif yang dirancang untuk membantu pengguna mengu
 
 ## 🧪 Demo
 
-Kunjungi [https://aksarify.xyz](https://aksarify.xyz) untuk mencoba Aksarify.
+Kunjungi [https://www.aksarify.xyz](https://www.aksarify.xyz) untuk mencoba Aksarify.
 
 ## 🛠️ Teknologi
 

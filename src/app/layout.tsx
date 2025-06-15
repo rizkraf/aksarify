@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://aksarify.xyz"),
+  metadataBase: new URL("https://www.aksarify.xyz"),
   alternates: {
     canonical: "/",
   },
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
       "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
     description:
       "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
-    url: "https://aksarify.xyz",
+    url: "https://www.aksarify.xyz",
     siteName: "Aksarify",
     images: [
       {
-        url: "https://aksarify.xyz/website-preview.png",
+        url: "https://www.aksarify.xyz/website-preview.png",
         width: 1200,
         height: 630,
         alt: "Aksarify - Platform Uji Pemahaman Bacaan",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       "Aksarify - Platform Uji dan Tingkatkan Pemahaman Bacaan Bahasa Indonesia",
     description:
       "Latih dan tingkatkan kemampuan membacamu dengan tes-tes kilat yang menyenangkan dan pembahasan instan.",
-    images: ["https://aksarify.xyz/website-preview.png"],
+    images: ["https://www.aksarify.xyz/website-preview.png"],
   },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -77,7 +77,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              url: "https://aksarify.xyz/",
+              url: "https://www.aksarify.xyz/",
               name: "Aksarify",
               description:
                 "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif",
@@ -86,7 +86,7 @@ export default function RootLayout({
                 target: {
                   "@type": "EntryPoint",
                   urlTemplate:
-                    "https://aksarify.xyz/search?q={search_term_string}",
+                    "https://www.aksarify.xyz/search?q={search_term_string}",
                 },
                 "query-input": "required name=search_term_string",
               },
@@ -99,8 +99,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              url: "https://aksarify.xyz",
-              logo: "https://aksarify.xyz/logo.png",
+              url: "https://www.aksarify.xyz",
+              logo: "https://www.aksarify.xyz/logo.png",
               name: "Aksarify",
               description:
                 "Platform tes pemahaman bacaan Bahasa Indonesia dengan metode efektif dan menyenangkan",

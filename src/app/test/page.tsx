@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Tes Pemahaman Bacaan | Aksarify",
     description:
       "Uji dan tingkatkan kemampuan membaca bahasa Indonesia dengan tes interaktif yang menyenangkan.",
-    url: "https://aksarify.xyz/test",
+    url: "https://www.aksarify.xyz/test",
     siteName: "Aksarify",
     locale: "id_ID",
     type: "website",
