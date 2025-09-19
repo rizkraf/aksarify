@@ -29,7 +29,7 @@ Kunjungi [https://www.aksarify.xyz](https://www.aksarify.xyz) untuk mencoba Aksa
 Aksarify dibangun dengan stack teknologi modern:
 
 - **Framework**: [Next.js 15](https://nextjs.org/) dengan App Router
-- **Database**: [Supabase PostgreSQL](https://www.supabase.com/) dengan [Prisma ORM](https://prisma.io/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/) dengan [Prisma ORM](https://prisma.io/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) dengan [Shadcn UI](https://ui.shadcn.com/)
 - **Backend**: [tRPC](https://trpc.io/) untuk API type-safe
 - **Deployment**: Dioptimalkan untuk [Vercel](https://vercel.com/)
